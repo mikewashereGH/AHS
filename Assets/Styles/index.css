@@ -1,0 +1,14 @@
+.tab-pane {
+    display: none;
+}
+
+.tab-pane.active {
+    display: block;
+}
+
+.gradient-text {
+    background: linear-gradient(to right, #2dd383, #ffe57d);
+    /*background: linear-gradient(to right, #17a766, #30da8e);*/
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
