@@ -294,78 +294,37 @@ $(document).ready(function () {
 });
 
 // Tools Tab
-// SQUARE ROOT CALCULATOR
+// Square root calculator
+const sqrtSubmitBtn = document.getElementById("sqrtSubmitBtn");
 
-const sqrt = {
-    numberInput: document.getElementById("sqrtCalcInput"),
-    resultBox: document.getElementById("sqrtCalcResult"),
-    submitButton: document.getElementById("sqrtSubmitBtn"),
-    feedback: {
-        box: document.getElementById("sqrtCalcFeedback"),
-        message: document.getElementById("sqrtCalcFeedbackMsg"),
-    },
-    error: {
-        box: document.getElementById("sqrtCalcError"),
-        message: document.getElementById("sqrtCalcErrorMsg"),
-    },
-};
-
-sqrt.submitButton.addEventListener("click", function () {
-    let number = parseFloat(sqrt.numberInput.value);
-
-    if (isNaN(number)) {
-        sqrt.feedback.box.style.display = "none";
-        sqrt.error.box.style.display = "block";
-        sqrt.error.message.innerText = "Please enter a valid number.";
-    } else if (number < 0) {
-        sqrt.feedback.box.style.display = "none";
-        sqrt.error.box.style.display = "block";
-        sqrt.error.message.innerText = "Please enter a positive number.";
-    } else {
-        sqrt.feedback.box.style.display = "none";
-        sqrt.error.box.style.display = "none";
-        let result = Math.sqrt(number);
-        sqrt.resultBox.innerText = `√${number} = ${result}`;
-    }
+sqrtSubmitBtn.addEventListener("click", function() {
+  const input = Number(document.getElementById("sqrtCalcInput").value);
+  if (!input) {
+    document.getElementById("sqrtCalcErrorMsg").textContent = "Please enter a valid input.";
+    document.getElementById("sqrtCalcError").style.display = "block";
+    document.getElementById("sqrtCalcResult").textContent = "";
+  } else {
+    const output = Math.sqrt(input);
+    document.getElementById("sqrtCalcErrorMsg").textContent = "";
+    document.getElementById("sqrtCalcError").style.display = "none";
+    document.getElementById("sqrtCalcResult").textContent = "The square root of " + input + " is " + output.toFixed(2);
+  }
 });
 
-// TRIANGLE AREA CALCULATOR
+// Triangle area calculator
+const triCalcSubmitBtn = document.getElementById("triCalcSubmitBtn");
 
-const tri = {
-    baseInput: document.getElementById("triCalcBaseInput"),
-    heightInput: document.getElementById("triCalcHeightInput"),
-    resultBox: document.getElementById("triCalcResult"),
-    submitButton: document.getElementById("triCalcSubmitBtn"),
-    feedback: {
-        box: document.getElementById("triCalcFeedback"),
-        message: document.getElementById("triCalcFeedbackMsg"),
-    },
-    error: {
-        box: document.getElementById("triCalcError"),
-        message: document.getElementById("triCalcErrorMsg"),
-    },
-};
-
-tri.submitButton.addEventListener("click", function () {
-    let base = parseFloat(tri.baseInput.value);
-    let height = parseFloat(tri.heightInput.value);
-
-    if (isNaN(base) || isNaN(height)) {
-        tri.feedback.box.style.display = "none";
-        tri.error.box.style.display = "block";
-        tri.error.message.innerText = "Please enter valid numbers.";
-    } else if (base < 0 || height < 0) {
-        tri.feedback.box.style.display = "none";
-        tri.error.box.style.display = "block";
-        tri.error.message.innerText = "Please enter positive numbers.";
-    } else if (base == 0 || height == 0) {
-        tri.feedback.box.style.display = "none";
-        tri.error.box.style.display = "block";
-        tri.error.message.innerText = "Base and height cannot be 0.";
-    } else {
-        tri.feedback.box.style.display = "none";
-        tri.error.box.style.display = "none";
-        let area = (base * height) / 2;
-        tri.resultBox.innerText = `(${base} * ${height}) / 2 = ${area}`;
-    }
+triCalcSubmitBtn.addEventListener("click", function() {
+  const base = Number(document.getElementById("triCalcBaseInput").value);
+  const height = Number(document.getElementById("triCalcHeightInput").value);
+  if (!base || !height) {
+    document.getElementById("triCalcErrorMsg").textContent = "Please enter valid values for both base and height.";
+    document.getElementById("triCalcError").style.display = "block";
+    document.getElementById("triCalcResult").textContent = "";
+  } else {
+    const output = 0.5 * base * height;
+    document.getElementById("triCalcErrorMsg").textContent = "";
+    document.getElementById("triCalcError").style.display = "none";
+    document.getElementById("triCalcResult").textContent = "The area of the triangle with base " + base + " and height " + height + " is " + output.toFixed(2);
+  }
 });
