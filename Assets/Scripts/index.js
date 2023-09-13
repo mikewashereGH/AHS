@@ -297,16 +297,16 @@ $(document).ready(function () {
 // SQUARE ROOT CALCULATOR
 
 const sqrt = {
-    numberInput: document.getElementById("sqrt_numberInput"),
-    resultBox: document.getElementById("sqrt_resultBox"),
-    submitButton: document.getElementById("sqrt_submitButton"),
+    numberInput: document.getElementById("sqrtCalcInput"),
+    resultBox: document.getElementById("sqrtCalcResult"),
+    submitButton: document.getElementById("sqrtSubmitBtn"),
     feedback: {
-        box: document.getElementById("feedbackBox"),
-        message: document.getElementById("feedbackMessage"),
+        box: document.getElementById("sqrtCalcFeedback"),
+        message: document.getElementById("sqrtCalcFeedbackMsg"),
     },
     error: {
-        box: document.getElementById("errorBox"),
-        message: document.getElementById("errorMessage"),
+        box: document.getElementById("sqrtCalcError"),
+        message: document.getElementById("sqrtCalcErrorMsg"),
     },
 };
 
@@ -332,17 +332,17 @@ sqrt.submitButton.addEventListener("click", function () {
 // TRIANGLE AREA CALCULATOR
 
 const tri = {
-    baseInput: document.getElementById("tri_baseInput"),
-    heightInput: document.getElementById("tri_heightInput"),
-    resultBox: document.getElementById("tri_resultBox"),
-    submitButton: document.getElementById("tri_submitButton"),
+    baseInput: document.getElementById("triCalcBaseInput"),
+    heightInput: document.getElementById("triCalcHeightInput"),
+    resultBox: document.getElementById("triCalcResult"),
+    submitButton: document.getElementById("triCalcSubmitBtn"),
     feedback: {
-        box: document.getElementById("feedbackBox"),
-        message: document.getElementById("feedbackMessage"),
+        box: document.getElementById("triCalcFeedback"),
+        message: document.getElementById("triCalcFeedbackMsg"),
     },
     error: {
-        box: document.getElementById("errorBox"),
-        message: document.getElementById("errorMessage"),
+        box: document.getElementById("triCalcError"),
+        message: document.getElementById("triCalcErrorMsg"),
     },
 };
 
