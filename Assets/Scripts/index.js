@@ -295,6 +295,7 @@ $(document).ready(function () {
 
 // Tools Tab
 // SQUARE ROOT CALCULATOR
+
 const sqrt = {
     numberInput: document.getElementById("sqrt_numberInput"),
     resultBox: document.getElementById("sqrt_resultBox"),
@@ -329,6 +330,7 @@ sqrt.submitButton.addEventListener("click", function () {
 });
 
 // TRIANGLE AREA CALCULATOR
+
 const tri = {
     baseInput: document.getElementById("tri_baseInput"),
     heightInput: document.getElementById("tri_heightInput"),
