@@ -294,3 +294,76 @@ $(document).ready(function () {
 });
 
 // Tools Tab
+// SQUARE ROOT CALCULATOR
+const sqrt = {
+    numberInput: document.getElementById("sqrt_numberInput"),
+    resultBox: document.getElementById("sqrt_resultBox"),
+    submitButton: document.getElementById("sqrt_submitButton"),
+    feedback: {
+        box: document.getElementById("feedbackBox"),
+        message: document.getElementById("feedbackMessage"),
+    },
+    error: {
+        box: document.getElementById("errorBox"),
+        message: document.getElementById("errorMessage"),
+    },
+};
+
+sqrt.submitButton.addEventListener("click", function () {
+    let number = parseFloat(sqrt.numberInput.value);
+
+    if (isNaN(number)) {
+        sqrt.feedback.box.style.display = "none";
+        sqrt.error.box.style.display = "block";
+        sqrt.error.message.innerText = "Please enter a valid number.";
+    } else if (number < 0) {
+        sqrt.feedback.box.style.display = "none";
+        sqrt.error.box.style.display = "block";
+        sqrt.error.message.innerText = "Please enter a positive number.";
+    } else {
+        sqrt.feedback.box.style.display = "none";
+        sqrt.error.box.style.display = "none";
+        let result = Math.sqrt(number);
+        sqrt.resultBox.innerText = `√${number} = ${result}`;
+    }
+});
+
+// TRIANGLE AREA CALCULATOR
+const tri = {
+    baseInput: document.getElementById("tri_baseInput"),
+    heightInput: document.getElementById("tri_heightInput"),
+    resultBox: document.getElementById("tri_resultBox"),
+    submitButton: document.getElementById("tri_submitButton"),
+    feedback: {
+        box: document.getElementById("feedbackBox"),
+        message: document.getElementById("feedbackMessage"),
+    },
+    error: {
+        box: document.getElementById("errorBox"),
+        message: document.getElementById("errorMessage"),
+    },
+};
+
+tri.submitButton.addEventListener("click", function () {
+    let base = parseFloat(tri.baseInput.value);
+    let height = parseFloat(tri.heightInput.value);
+
+    if (isNaN(base) || isNaN(height)) {
+        tri.feedback.box.style.display = "none";
+        tri.error.box.style.display = "block";
+        tri.error.message.innerText = "Please enter valid numbers.";
+    } else if (base < 0 || height < 0) {
+        tri.feedback.box.style.display = "none";
+        tri.error.box.style.display = "block";
+        tri.error.message.innerText = "Please enter positive numbers.";
+    } else if (base == 0 || height == 0) {
+        tri.feedback.box.style.display = "none";
+        tri.error.box.style.display = "block";
+        tri.error.message.innerText = "Base and height cannot be 0.";
+    } else {
+        tri.feedback.box.style.display = "none";
+        tri.error.box.style.display = "none";
+        let area = (base * height) / 2;
+        tri.resultBox.innerText = `(${base} * ${height}) / 2 = ${area}`;
+    }
+});

@@ -215,174 +215,110 @@
 
                     <div id="tab3" class="tab-pane">
                         <!-- Square Root form -->
-<div class="card bg-gray-900">
-    <!-- Image -->
-    <div class="p-2">
-        <img alt="..."
-            src="https://img.freepik.com/premium-vector/modern-wave-blue-abstract-banner-design-background-blue-banner-background-geometric-blue-light-stripes-texture-background_181182-28829.jpg"
-            class="card-img">
-    </div>
-    <!-- Card Body -->
-    <div class="card-body">
-        <!-- Title -->
-        <h3 class="h4 text-light">Find the Square Root</h3>
+                        <div class="card bg-gray-900">
+                            <!-- Image -->
+                            <div class="p-2">
+                                <img alt="..."
+                                    src="https://img.freepik.com/premium-vector/modern-wave-blue-abstract-banner-design-background-blue-banner-background-geometric-blue-light-stripes-texture-background_181182-28829.jpg"
+                                    class="card-img">
+                            </div>
+                            <!-- Card Body -->
+                            <div class="card-body">
+                                <!-- Title -->
+                                <h3 class="h4 text-light">Find the Square Root</h3>
 
-        <hr class="my-5 opacity-20">
+                                <hr class="my-5 opacity-20">
 
-        <form>
-            <div class="input-group position-relative">
-                <span class="input-group-text" id="">#</span>
-                <input type="number" class="form-control bg-dark text-light border-gray-700"
-                       placeholder="Input" aria-label="Input"
-                       aria-describedby="inputGroup-sizing-default" id="sqrt_numberInput">
-            </div>
+                                <form>
+                                    <div class="input-group position-relative">
+                                        <span class="input-group-text" id="">#</span>
+                                        <input type="number" class="form-control bg-dark text-light border-gray-700"
+                                            placeholder="Input" aria-label="Input"
+                                            aria-describedby="inputGroup-sizing-default" id="sqrt_numberInput">
+                                    </div>
 
-            <div class="mt-2">
-                <span class="text-danger" id="sqrt_errorFeedback"></span>
-            </div>
+                                    <div class="mt-2">
+                                        <span class="text-danger" id="sqrt_errorFeedback"></span>
+                                    </div>
 
-            <br>
+                                    <br>
 
-            <div class="alert bg-transparent border-gray-700" role="alert" id="sqrt_answerBox"
-                 style="display:none;">
-                <strong>Answer</strong> The answer gets displayed here...
-            </div>
+                                    <div class="alert bg-transparent border-gray-700" role="alert" id="sqrt_answerBox"
+                                        style="display:none;">
+                                        <strong>Answer</strong> The answer gets displayed here...
+                                    </div>
 
-            <div class="alert bg-transparent text-danger border-danger" role="alert"
-                 id="sqrt_errorBox" style="display:none;">
-                <strong>Error:</strong> <span id="sqrt_errorMessage"></span>
-            </div>
+                                    <div class="alert bg-transparent text-danger border-danger" role="alert"
+                                        id="sqrt_errorBox" style="display:none;">
+                                        <strong>Error:</strong> <span id="sqrt_errorMessage"></span>
+                                    </div>
 
-            <br>
+                                    <br>
 
-            <button type="submit" class="btn btn-md btn-primary w-full"
-                    id="sqrt_submitButton">Check</button>
-        </form>
-    </div>
-</div>
+                                    <button type="submit" class="btn btn-md btn-primary w-full"
+                                        id="sqrt_submitButton">Check</button>
+                                </form>
+                            </div>
+                        </div>
 
-<script>
-    const numberInput = document.getElementById("sqrt_numberInput");
-    const errorFeedback = document.getElementById("sqrt_errorFeedback");
-    const errorMessage = document.getElementById("sqrt_errorMessage");
-    const answerBox = document.getElementById("sqrt_answerBox");
-    const errorBox = document.getElementById("sqrt_errorBox");
-    const submitButton = document.getElementById("sqrt_submitButton");
-    submitButton.addEventListener("click", (event) => {
-        event.preventDefault();
-        const number = parseFloat(numberInput.value);
-        if (isNaN(number)) {
-            errorFeedback.textContent = "";
-            errorMessage.textContent = "Invalid input: please enter a number";
-            errorBox.style.display = "block";
-            answerBox.style.display = "none";
-        } else if (number < 0) {
-            errorFeedback.textContent = "";
-            errorMessage.textContent = "Invalid input: please enter a non-negative number";
-            errorBox.style.display = "block";
-            answerBox.style.display = "none";
-        } else {
-            errorFeedback.textContent = "";
-            errorMessage.textContent = "";
-            errorBox.style.display = "none";
-            answerBox.style.display = "block";
-            const result = Math.sqrt(number);
-            answerBox.innerHTML = `<strong>Answer:</strong> The square root of ${number} is ${result}`;
-        }
-    });
-</script>
 
-<!-- Triangle Area Calculator form -->
-<div class="card bg-gray-900">
-    <!-- Image -->
-    <div class="p-2">
-        <img alt="..."
-            src="https://img.freepik.com/premium-vector/modern-wave-blue-abstract-banner-design-background-blue-banner-background-geometric-blue-light-stripes-texture-background_181182-28829.jpg"
-            class="card-img">
-    </div>
-    <!-- Card Body -->
-    <div class="card-body">
-        <!-- Title -->
-        <h3 class="h4 text-light">Triangle Area Calculator</h3>
+                        <!-- Triangle Area Calculator form -->
+                        <div class="card bg-gray-900">
+                            <!-- Image -->
+                            <div class="p-2">
+                                <img alt="..."
+                                    src="https://img.freepik.com/premium-vector/modern-wave-blue-abstract-banner-design-background-blue-banner-background-geometric-blue-light-stripes-texture-background_181182-28829.jpg"
+                                    class="card-img">
+                            </div>
+                            <!-- Card Body -->
+                            <div class="card-body">
+                                <!-- Title -->
+                                <h3 class="h4 text-light">Triangle Area Calculator</h3>
 
-        <hr class="my-5 opacity-20">
+                                <hr class="my-5 opacity-20">
 
-        <form>
-            <div class="input-group position-relative">
-                <span class="input-group-text" id="">Base</span>
-                <input type="number" class="form-control bg-dark text-light border-gray-700"
-                       placeholder="Enter the base value" aria-label="Base Value"
-                       aria-describedby="inputGroup-sizing-default" id="tri_baseInput">
-            </div>
+                                <form>
+                                    <div class="input-group position-relative">
+                                        <span class="input-group-text" id="">Base</span>
+                                        <input type="number" class="form-control bg-dark text-light border-gray-700"
+                                            placeholder="Enter the base value" aria-label="Base Value"
+                                            aria-describedby="inputGroup-sizing-default" id="tri_baseInput">
+                                    </div>
 
-            <br>
+                                    <br>
 
-            <div class="input-group position-relative">
-                <span class="input-group-text" id="">Height</span>
-                <input type="number" class="form-control bg-dark text-light border-gray-700"
-                       placeholder="Enter the height value" aria-label="Height Value"
-                       aria-describedby="inputGroup-sizing-default" id="tri_heightInput">
-            </div>
+                                    <div class="input-group position-relative">
+                                        <span class="input-group-text" id="">Height</span>
+                                        <input type="number" class="form-control bg-dark text-light border-gray-700"
+                                            placeholder="Enter the height value" aria-label="Height Value"
+                                            aria-describedby="inputGroup-sizing-default" id="tri_heightInput">
+                                    </div>
 
-            <br>
+                                    <br>
 
-            <div class="mt-2">
-                <span class="text-danger" id="tri_errorFeedback"></span>
-            </div>
+                                    <div class="mt-2">
+                                        <span class="text-danger" id="tri_errorFeedback"></span>
+                                    </div>
 
-            <br>
+                                    <br>
 
-            <div class="alert bg-transparent border-gray-700" role="alert" id="tri_answerBox"
-                 style="display:none;">
-                <strong>Answer</strong> The answer gets displayed here...
-            </div>
+                                    <div class="alert bg-transparent border-gray-700" role="alert" id="tri_answerBox"
+                                        style="display:none;">
+                                        <strong>Answer</strong> The answer gets displayed here...
+                                    </div>
 
-            <div class="alert bg-transparent text-danger border-danger" role="alert"
-                 id="tri_errorBox" style="display:none;">
-                <strong>Error:</strong> <span id="tri_errorMessage"></span>
-            </div>
+                                    <div class="alert bg-transparent text-danger border-danger" role="alert"
+                                        id="tri_errorBox" style="display:none;">
+                                        <strong>Error:</strong> <span id="tri_errorMessage"></span>
+                                    </div>
 
-            <br>
+                                    <br>
 
-            <button type="submit" class="btn btn-md btn-primary w-full"
-                    id="tri_submitButton">Calculate</button>
-        </form>
-    </div>
-</div>
-
-<script>
-    const baseInput = document.getElementById("tri_baseInput");
-    const heightInput = document.getElementById("tri_heightInput");
-    const errorFeedback = document.getElementById("tri_errorFeedback");
-    const errorMessage = document.getElementById("tri_errorMessage");
-    const answerBox = document.getElementById("tri_answerBox");
-    const errorBox = document.getElementById("tri_errorBox");
-    const submitButton = document.getElementById("tri_submitButton");
-    submitButton.addEventListener("click", (event) => {
-        event.preventDefault();
-        const baseValue = parseFloat(baseInput.value);
-        const heightValue = parseFloat(heightInput.value);
-        if (isNaN(baseValue) || isNaN(heightValue)) {
-            errorFeedback.textContent = "";
-            errorMessage.textContent = "Invalid input: please enter a number for both the base and height values";
-            errorBox.style.display = "block";
-            answerBox.style.display = "none";
-        } else if (baseValue < 0 || heightValue < 0) {
-            errorFeedback.textContent = "";
-            errorMessage.textContent = "Invalid input: please enter non-negative values for both the base and height";
-            errorBox.style.display = "block";
-            answerBox.style.display = "none";
-        } else {
-            errorFeedback.textContent = "";
-            errorMessage.textContent = "";
-            errorBox.style.display = "none";
-            answerBox.style.display = "block";
-            const areaValue = (baseValue * heightValue) / 2;
-            answerBox.innerHTML = `<strong>Answer:</strong> The area of the triangle with base ${baseValue} and height ${heightValue} is ${areaValue}`;
-        }
-    });
-</script>
-
+                                    <button type="submit" class="btn btn-md btn-primary w-full"
+                                        id="tri_submitButton">Calculate</button>
+                                </form>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
