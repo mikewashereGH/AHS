@@ -294,6 +294,22 @@ $(document).ready(function () {
 });
 
 // Tools Tab
+// SQUARE ROOT CALCULATOR
+
+const sqrt = {
+    numberInput: document.getElementById("sqrtCalcInput"),
+    resultBox: document.getElementById("sqrtCalcResult"),
+    submitButton: document.getElementById("sqrtSubmitBtn"),
+    feedback: {
+        box: document.getElementById("sqrtCalcFeedback"),
+        message: document.getElementById("sqrtCalcFeedbackMsg"),
+    },
+    error: {
+        box: document.getElementById("sqrtCalcError"),
+        message: document.getElementById("sqrtCalcErrorMsg"),
+    },
+};
+
 // Square root calculator
 const sqrtSubmitBtn = document.getElementById("sqrtSubmitBtn");
 
@@ -310,6 +326,24 @@ sqrtSubmitBtn.addEventListener("click", function() {
     document.getElementById("sqrtCalcResult").textContent = "The square root of " + input + " is " + output.toFixed(2);
   }
 });
+
+
+// TRIANGLE AREA CALCULATOR
+
+const tri = {
+    baseInput: document.getElementById("triCalcBaseInput"),
+    heightInput: document.getElementById("triCalcHeightInput"),
+    resultBox: document.getElementById("triCalcResult"),
+    submitButton: document.getElementById("triCalcSubmitBtn"),
+    feedback: {
+        box: document.getElementById("triCalcFeedback"),
+        message: document.getElementById("triCalcFeedbackMsg"),
+    },
+    error: {
+        box: document.getElementById("triCalcError"),
+        message: document.getElementById("triCalcErrorMsg"),
+    },
+};
 
 // Triangle area calculator
 const triCalcSubmitBtn = document.getElementById("triCalcSubmitBtn");
