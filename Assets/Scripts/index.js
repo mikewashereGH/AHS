@@ -407,6 +407,6 @@ tri2.submitButton.addEventListener("click", function () {
         tri2.error.box.style.display = "none";
         let s = (side1 + side2 + side3) / 2;
         let area = Math.sqrt(s * (s - side1) * (s - side2) * (s - side3));
-        tri2.resultBox.innerText = `Math.sqrt(${s} * (${s} - ${side1}) * (${s} - ${side2}) * (${s} - ${side3})) = ${area}`;
+        tri2.resultBox.innerText = `(${s} * (${s} - ${side1}) * (${s} - ${side2}) * (${s} - ${side3})) = ${area}`;
     }
 });
