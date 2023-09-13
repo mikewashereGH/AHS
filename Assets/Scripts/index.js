@@ -295,7 +295,6 @@ $(document).ready(function () {
 
 // Tools Tab
 // SQUARE ROOT CALCULATOR
-
 const sqrt = {
     numberInput: document.getElementById("sqrtCalcInput"),
     resultBox: document.getElementById("sqrtCalcResult"),
@@ -330,7 +329,6 @@ sqrt.submitButton.addEventListener("click", function () {
 });
 
 // TRIANGLE AREA CALCULATOR
-
 const tri = {
     baseInput: document.getElementById("triCalcBaseInput"),
     heightInput: document.getElementById("triCalcHeightInput"),
@@ -367,5 +365,48 @@ tri.submitButton.addEventListener("click", function () {
         tri.error.box.style.display = "none";
         let area = (base * height) / 2;
         tri.resultBox.innerText = `(${base} * ${height}) / 2 = ${area}`;
+    }
+});
+
+// TRIANGLE AREA CALCULATOR 2
+const tri2 = {
+    side1Input: document.getElementById("tri2CalcSide1Input"),
+    side2Input: document.getElementById("tri2CalcSide2Input"),
+    side3Input: document.getElementById("tri2CalcSide3Input"),
+    resultBox: document.getElementById("tri2CalcResult"),
+    submitButton: document.getElementById("tri2CalcSubmitBtn"),
+    feedback: {
+        box: document.getElementById("tri2CalcFeedback"),
+        message: document.getElementById("tri2CalcFeedbackMsg"),
+    },
+    error: {
+        box: document.getElementById("tri2CalcError"),
+        message: document.getElementById("tri2CalcErrorMsg"),
+    },
+};
+
+tri2.submitButton.addEventListener("click", function () {
+    let side1 = parseFloat(tri2.side1Input.value);
+    let side2 = parseFloat(tri2.side2Input.value);
+    let side3 = parseFloat(tri2.side3Input.value);
+
+    if (isNaN(side1) || isNaN(side2) || isNaN(side3)) {
+        tri2.feedback.box.style.display = "none";
+        tri2.error.box.style.display = "block";
+        tri2.error.message.innerText = "Please enter valid numbers.";
+    } else if (side1 <= 0 || side2 <= 0 || side3 <= 0) {
+        tri2.feedback.box.style.display = "none";
+        tri2.error.box.style.display = "block";
+        tri2.error.message.innerText = "Please enter positive numbers.";
+    } else if (side1 + side2 <= side3 || side2 + side3 <= side1 || side1 + side3 <= side2) {
+        tri2.feedback.box.style.display = "none";
+        tri2.error.box.style.display = "block";
+        tri2.error.message.innerText = "These side lengths cannot form a triangle.";
+    } else {
+        tri2.feedback.box.style.display = "none";
+        tri2.error.box.style.display = "none";
+        let s = (side1 + side2 + side3) / 2;
+        let area = Math.sqrt(s * (s - side1) * (s - side2) * (s - side3));
+        tri2.resultBox.innerText = `Math.sqrt(${s} * (${s} - ${side1}) * (${s} - ${side2}) * (${s} - ${side3})) = ${area}`;
     }
 });
